@@ -2,13 +2,22 @@ $(function() {
   var handleWeatherResponse = function(data) {
     console.log(data);
 
-    // Put your code here to change the "markup" variable. 
-    // Don't change any other code in this file. You will be sad.
-    
-    var markup = "The weather report... " + "will be here when I finish my homework.";
-    
-    
-    // End of your code
+    var markup = "The current weather forecast in Chicago is " + data.currently.summary + " with a current temperature of " + data.currently.apparentTemperature +
+    " (F). Tomorrow's high will be " + data.daily.data[0].apparentTemperatureMax + " with a low of " + data.daily.data[0].apparentTemperatureMin + " and " + data.daily.data[0].summary +
+    " The following day will be a high of " + data.daily.data[1].apparentTemperatureMax + " with a low of " + data.daily.data[1].apparentTemperatureMin + " and " + data.daily.data[1].summary +
+    " The next day will be a high of " + data.daily.data[2].apparentTemperatureMax + " with a low of " + data.daily.data[2].apparentTemperatureMin + " and " + data.daily.data[2].summary +
+    "<h3>STAY CLASSY, CHICAGO!</h3>"
+
+// SCRATCHPAD
+    // var temp = "Current Temperature: " + data.currently.apparentTemperature;
+    // var tempb = "Tomorrow's Forecast: " + data.daily.data[1].summary ": " +data.daily.data[1].temperatureMax + " / " +data.daily.data[1].temperatureMin;
+    // var tempc = "Two-Day Forecast: " + data.daily.data[2].summary ": " +data.daily.data[2].temperatureMax + " / " +data.daily.data[2].temperatureMin;
+    // var tempd = "Three-Day Forecast: " + data.daily.data[3].summary ": " +data.daily.data[3].temperatureMax + " / " +data.daily.data[3].temperatureMin;
+
+    // $('.current-temp').html(temp);
+    // $('.tomorrow-weather').html(tempb);
+    // $('.2day-weather').html(tempc);
+    // $('.3day-weather').html(tempd);
 
     $('.weather-report').html(markup);
   }
